@@ -1,6 +1,13 @@
-table,tr,td,th{
-	border: solid black 3px;
+table,th,tr,td{
+	border: 2px solid black;
+	border-collapse: collapse;
+	padding: 10px;
+	text-align: center;
 }
-tr{
-	
+th{
+	background-color: lightgreen;
+}
+tr:nth-child(even){
+	background-color: black;
+	color: white;
 }
