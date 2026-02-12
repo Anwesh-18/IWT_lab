@@ -1,0 +1,120 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; }
+        body { background-color: #f4f7f6; color: #333; line-height: 1.6; }
+        
+
+        nav { background: #2c3e50; color: white; padding: 1rem; position: sticky; top: 0; z-index: 1000; display: flex; justify-content: space-around; }
+        nav a { color: white; text-decoration: none; font-weight: bold; }
+
+        header { 
+            height: 60vh; 
+            background: linear-gradient(135deg, #3498db, #8e44ad); 
+            color: white; 
+            display: flex; 
+            flex-direction: column; 
+            justify-content: center; 
+            align-items: center; 
+            text-align: center;
+        }
+        header h1 { font-size: 3rem; margin-bottom: 10px; }
+        section { padding: 4rem 2rem; max-width: 1100px; margin: auto; }
+        h2 { text-align: center; margin-bottom: 2rem; color: #2c3e50; border-bottom: 2px solid #3498db; display: inline-block; width: 100%; padding-bottom: 10px; }
+
+        .project-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; }
+        .project-card { 
+            background: white; 
+            padding: 20px; 
+            border-radius: 10px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1); 
+            transition: transform 0.3s ease;
+        }
+        .project-card:hover { transform: translateY(-10px); }
+        .project-card h3 { color: #3498db; margin-bottom: 10px; }
+
+        .skills-list { display: flex; flex-wrap: wrap; justify-content: center; gap: 15px; }
+        .skill-tag { background: #2c3e50; color: white; padding: 8px 20px; border-radius: 20px; font-size: 0.9rem; box-shadow: 0 4px 6px rgba(0,0,0,0.1); transition: transform 0.3s ease; }
+
+
+        form { display: flex; flex-direction: column; max-width: 600px; margin: auto; gap: 15px; }
+        input, textarea { padding: 10px; border: 1px solid #ccc; border-radius: 5px; }
+        button { background: #3498db; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer; font-size: 1.1rem; }
+        button:hover { background: #2980b9; }
+
+        footer { text-align: center; padding: 2rem; background: #2c3e50; color: white; margin-top: 2rem; }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+    </nav>
+
+    <header>
+        <h1 style="text-align: right">Hi, I'm Anwesh</h1>
+        <p>Web Developer | Creative Thinker | Problem Solver</p>
+    </header>
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>I am a passionate developer with a background in Computer Science.
+		 I enjoy turning complex problems into simple, beautiful, and intuitive designs. My goal is to build software that impacts people's lives positively.
+		</p>
+    </section>
+
+    <section id="projects">
+        <h2>My Projects</h2>
+        <div class="project-grid">
+            <div class="project-card">
+                <h3>Studymate Web pp</h3>
+                <p>A website for students that will make them perpare for competetive exams like Jee,Neet etc.</p>
+                <small>Tech: React, Fastapi</small>
+            </div>
+            <div class="project-card">
+                <h3>Weather App</h3>
+                <p>Real-time weather tracking using OpenWeather API integration.</p>
+                <small>Tech: JavaScript, API</small>
+            </div>
+            <div class="project-card">
+                <h3>Task Manager</h3>
+                <p>A productivity tool to organize daily tasks with local storage features.</p>
+                <small>Tech: HTML/CSS</small>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <h2>Technical Skills</h2>
+        <div class="skills-list">
+            <span class="skill-tag">HTML5</span>
+            <span class="skill-tag">CSS3</span>
+            <span class="skill-tag">JavaScript</span>
+            <span class="skill-tag">Python</span>
+			<span class="skill-tag">Machine Learning</span>
+            <span class="skill-tag">Git</span>
+        </div>
+    </section>
+
+    <section id="contact">
+        <h2>Get In Touch</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Anwesh. Built it with passion.</p>
+    </footer>
+
+</body>
+</html>
