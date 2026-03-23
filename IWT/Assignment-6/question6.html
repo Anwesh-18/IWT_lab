@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Currency Converter</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: #f2f2f2;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .card {
+            background: #ddd;
+            padding: 25px;
+            border-radius: 15px;
+            width: 320px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        label {
+            font-weight: bold;
+        }
+        select, input {
+            width: 100%;
+            padding: 10px;
+            margin: 8px 0 15px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+        }
+        input[readonly] {
+            background: #f9f9f9;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background: black;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #333;
+        }
+    </style>
+</head>
+<body>
+<div class="card">
+    <h2>Currency Converter</h2>
+    <label>From:</label>
+    <select id="from">
+        <option value="">Select</option>
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+        <option value="INR">INR</option>
+        <option value="AUD">AUD</option>
+    </select>
+    <input type="number" id="amount" placeholder="Enter amount">
+    <label>To:</label>
+    <select id="to">
+        <option value="">Select</option>
+        <option value="USD">USD</option>
+        <option value="EUR">EUR</option>
+        <option value="GBP">GBP</option>
+        <option value="INR">INR</option>
+        <option value="AUD">AUD</option>
+    </select>
+    <input type="text" id="result" placeholder="Converted amount" readonly>
+    <button onclick="convert()">Convert</button>
+</div>
+<script>
+const rates = {
+    USD: { EUR: 0.93, GBP: 0.82, INR: 82.74, AUD: 1.47 },
+    EUR: { USD: 1.08, GBP: 0.88, INR: 89.06, AUD: 1.58 },
+    GBP: { USD: 1.22, EUR: 1.14, INR: 101.5, AUD: 1.80 },
+    INR: { USD: 0.012, EUR: 0.011, GBP: 0.0098, AUD: 0.018 },
+    AUD: { USD: 0.68, EUR: 0.63, GBP: 0.55, INR: 55.87 }
+};
+function convert() {
+    let amount = document.getElementById("amount").value;
+    let from = document.getElementById("from").value;
+    let to = document.getElementById("to").value;
+    if (!amount || !from || !to) {
+        alert("All fields are required");
+        return;
+    }
+    if (from === to) {
+        alert("From and To currencies must be different");
+        return;
+    }
+    let converted = amount * rates[from][to];
+    document.getElementById("result").value = converted.toFixed(2);
+}
+</script>
+</body>
+</html>

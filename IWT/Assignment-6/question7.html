@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="script.js"></script>
+<style>
+    body {font-family: Arial, sans-serif;
+        background: #f2f2f2;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+    }
+    .form-container {background: white;
+        padding: 25px;
+        border-radius: 12px;
+        width: 350px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+    h2 {text-align: center;
+        margin-bottom: 20px;
+    }
+    label {font-weight: bold;
+        display: block;
+        margin-top: 10px;
+    }
+    input, textarea, select {width: 100%;
+        padding: 10px;
+        margin-top: 5px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        box-sizing: border-box;
+    }
+    textarea {resize: none;
+        height: 70px;
+    }
+    .gender {display: flex;
+        gap: 15px;
+        margin-top: 5px;
+    }
+    .gender label {
+        font-weight: normal;
+    }
+    button {width: 100%;
+        padding: 12px;
+        margin-top: 15px;
+        background: black;
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+    }
+    button:hover {background: #333;}
+</style>
+</head>
+<body>
+<div class="form-container">
+    <h2><u>Registration Form</u></h2>
+    <form onsubmit="return validateForm()">
+        <label>Name</label>
+        <input type="text" id="name">
+        <label>Gender</label>
+        <div class="gender">
+            <label><input type="radio" name="gender" value="Male"> Male</label>
+            <label><input type="radio" name="gender" value="Female"> Female</label>
+            <label><input type="radio" name="gender" value="Other"> Other</label>
+        </div>
+        <label>Mobile</label>
+        <input type="text" id="mobile">
+        <label>Address</label>
+        <textarea id="address"></textarea>
+        <label>Country</label>
+        <select id="country">
+            <option value="">Select</option>
+            <option>India</option>
+            <option>USA</option>
+        </select>
+        <label>Email</label>
+        <input type="text" id="email">
+        <label>Password</label>
+        <input type="password" id="password">
+        <button type="submit">Register</button>
+    </form>
+</div>
+</body>
+</html>

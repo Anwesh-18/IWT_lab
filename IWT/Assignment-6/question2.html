@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam magni asperiores reprehenderit quod molestiae unde ipsum tenetur assumenda nemo neque, cumque quam provident fugit tempore commodi inventore delectus! Incidunt, facilis?
+Eum, rerum amet itaque adipisci labore facere asperiores et iusto dolor blanditiis, expedita recusandae, repudiandae molestiae reiciendis numquam rem! Nostrum minima mollitia officia, quas soluta commodi recusandae saepe animi illum.</p>
+<button onclick="togglePara()" id="btn">Hide</button>
+<script>
+function togglePara() {
+    let para = document.getElementById("para");
+    let btn = document.getElementById("btn");
+
+    if (para.style.display === "none") {
+        para.style.display = "block";
+        btn.innerText = "Hide";
+    } else {
+        para.style.display = "none";
+        btn.innerText = "Show";
+    }
+}
+</script>
+</body>
+</html>
